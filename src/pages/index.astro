@@ -1,11 +1,166 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import my_data from '../data/my_data.json';
 ---
-
 <Layout>
-	<Welcome />
+
+    <section class="grid md:grid-cols-2 h-[90vh] place-items-center gap-12 py-12" id="top">
+      <div>
+        <h1 id="intro-heading" class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          Hi, I'm <span class="text-gradient">Rahi Omkar</span>
+        </h1>
+
+        <p id="intro-paragraph" class="mt-6 text-lg lg:text-xl text-gray-600 max-w-xl">
+          I'm a software developer with a passion for building web applications and exploring new technologies.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-6 mt-10" id="button-group">
+          <a href="#" class="px-6 py-3 text-center border-gradient font-medium rounded-md uppercase text-base shadow-sm">
+            <span class="text-gradient">Download CV</span>
+          </a>
+          <a href="#contact" class="px-6 py-3 text-center bg-gradient font-medium rounded-md uppercase text-base shadow-md">
+            Contact Me
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-12 md:mt-0">
+        <div class="scene">
+          <div class="cube">
+            <div class="face front">I code in <br />Django</div>
+            <div class="face back">I code in <br />Node.js</div>
+            <div class="face right">I code in <br />React</div>
+            <div class="face left">I code in <br />Python</div>
+            <div class="face top">I code in <br />PHP</div>
+            <div class="face bottom">I code in <br />JavaScript</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-12 py-20 reveal-section" id="about">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-6">About Me</h2>
+        <p class="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed">
+          I'm a passionate software developer focused on crafting efficient, scalable, and user-friendly web applications. I enjoy learning new technologies and solving real-world problems through code.
+        </p>
+
+        <div class="mt-10">
+          <h3 class="text-2xl font-semibold text-zinc-800 dark:text-white">Education</h3>
+          <div class="mt-4 border-l-4 border-blue-500 pl-4">
+            <h4 class="text-xl font-medium text-zinc-700 dark:text-zinc-200">Bachelor of Computer Application</h4>
+            <p class="text-zinc-500 dark:text-zinc-400">Gujarat University</p>
+            <p class="text-sm text-zinc-400 dark:text-zinc-500">2022 - 2025</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 reveal-section" id="technologies">
+      <h2 class="text-center text-4xl md:text-5xl font-bold text-gradient mb-12">Technologies</h2>
+      <ul class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+        {my_data.skills.map(skill => (
+          <li class="flex flex-col items-center gap-3 bg-zinc-100 py-6 px-4 rounded-md text-center">
+            <img src={`/languages/${skill.icon}`} alt={`${skill.name} Logo`} class="w-10 h-10 object-contain">
+            <span class="uppercase font-semibold text-sm text-gray-700">{skill.name.toUpperCase()}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="bg-white py-24 reveal-section" id="projects">
+      <h2 class="text-center text-4xl md:text-5xl font-bold text-gradient mb-12">My Projects</h2>
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {my_data.projects.map(project => (
+          <div class="bg-white rounded-md border border-zinc-200 overflow-hidden transition">
+            <img src=`mockups/${project.image}` alt="Project" class="w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-zinc-800 mb-2">{project.title}</h3>
+              <p class="text-sm text-zinc-600 leading-relaxed">
+                {project.description}
+              </p>
+              <p class="mt-4 text-zinc-500">
+                <span class="font-medium text-zinc-700">Tech stack:</span> {project.techStack}
+              </p>
+              <div class="flex gap-4 mt-4 flex-col md:flex-row">
+                <a class="inline-flex items-center gap-1 font-medium text-blue-600 dark:text-blue-400 watch-demo cursor-pointer" target="_blank" href={project.demoLink}>
+                  <ion-icon name="flash-outline"></ion-icon> Watch Demo
+                </a>
+                <a href={project.githubLink} class="inline-flex items-center gap-1 font-medium text-zinc-600" target="_blank">
+                  <ion-icon name="logo-github"></ion-icon> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-gradient rounded-xl py-24 mt-32 reveal-section" id="contact">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <h2 class="text-xl md:text-2xl font-medium">For any questions please mail me:</h2>
+        <a href="mailto:hi@example.com" class="block text-2xl md:text-3xl font-bold-transparent mt-4 italic">
+          omk.rahi@gmail.com
+        </a>
+      </div>
+    </section>
 </Layout>
+
+
+
+<script>
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const cube = document.querySelector(".cube");
+
+gsap.to(cube, {
+    rotateX: 360,
+    rotateY: 360,
+    duration: 10,
+    ease: "none",
+    repeat: -1,
+});
+
+gsap.from("#intro-heading", {
+duration: 1,
+y: -50,
+opacity: 0,
+ease: "power2.out"
+});
+
+gsap.from("#intro-paragraph", {
+duration: 1,
+y: 30,
+opacity: 0,
+delay: 0.5,
+ease: "power2.out"
+});
+
+gsap.from("#button-group a", {
+y: 50,
+opacity: 0,
+duration: 1,
+delay: 0.6,
+stagger: 0.2, 
+ease: "back.out(1.7)"
+});
+
+gsap.utils.toArray(".reveal-section").forEach((section) => {
+  gsap.from(section, {
+    scrollTrigger: {
+      trigger: section,
+      start: "top 80%", 
+      toggleActions: "play none none reverse", 
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power2.out",
+  });
+});
+
+
+</script>

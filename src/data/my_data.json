@@ -1,0 +1,112 @@
+{
+  "skills": [
+    {
+      "name": "html",
+      "icon": "html.png"
+    },
+    {
+      "name": "css",
+      "icon": "css.png"
+    },
+    {
+      "name": "javascript",
+      "icon": "js.png"
+    },
+    {
+      "name": "Bootstrap",
+      "icon": "bootstrap.png"
+    },
+    {
+      "name": "Jquery",
+      "icon": "jquery.svg"
+    },
+    {
+      "name": "Tailwind css",
+      "icon": "tailwindcss.svg"
+    },
+    {
+      "name": "react",
+      "icon": "react.png"
+    },
+    {
+      "name": "Astro",
+      "icon": "astro.png"
+    },
+    {
+      "name": "nodejs",
+      "icon": "node.png"
+    },
+
+    {
+      "name": "express",
+      "icon": "express.svg"
+    },
+    {
+      "name": "mongodb",
+      "icon": "mongodb.svg"
+    },
+    {
+      "name": "Python",
+      "icon": "python.png"
+    },
+    {
+      "name": "Django",
+      "icon": "django.svg"
+    },
+    {
+      "name": "MYSQL",
+      "icon": "mysql.png"
+    },
+    {
+      "name": "Postgresql",
+      "icon": "postgresql.svg"
+    },
+    {
+      "name": "git",
+      "icon": "git.png"
+    },
+    {
+      "name": "github",
+      "icon": "github.png"
+    },
+    {
+      "name": "php",
+      "icon": "php.svg"
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "Contractor Enterprise IT Solutions",
+      "description": "Contractor Enterprise IT Solutions is a web-based platform designed to make the company's services and products easily accessible online.",
+      "image": "contractor-enterprise.png",
+      "techStack": "HTML, CSS, BOOTSTRAP, SCSS, JQUERY, Python, Django, PostgreSQL",
+      "demoLink": "https://player.vimeo.com/video/1077443571?h=6edcd0a97e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=584790&amp;autoplay=1",
+      "githubLink": "https://github.com/omk-rahi/contractor-enterprise"
+    },
+    {
+      "title": "Dhwani's Salon",
+      "description": "Developed a responsive website for Dhwani Salon featuring eCommerce and service booking functionalities. Integrated an admin panel for managing products, services, and customer bookings. Ensured a seamless user experience with a clean, mobile-friendly design using HTML, CSS, and Bootstrap.",
+      "image": "salon.png",
+      "techStack": "PHP, HTML, CSS, Bootstrap, MySQL",
+      "demoLink": "https://player.vimeo.com/video/1078327264?h=0e11ef00f3&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+      "githubLink": "https://github.com/omk-rahi/dhwani-salon"
+    },
+    {
+      "title": "Sahjanand Medical Store",
+      "description": "Developed a responsive website for Sahjanand Medical Store to showcase products and services, ensuring user-friendly navigation and reliable access to essential healthcare information.",
+      "image": "sahjanand-medical-store.png",
+      "techStack": "HTML, CSS, BOOTSTRAP, SCSS, JQUERY, Python, Django, PostgreSQL",
+      "demoLink": "https://player.vimeo.com/video/1078326371?h=e06d7b04a3&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+      "githubLink": "https://github.com/omk-rahi/medical-store"
+    },
+    {
+      "title": "Flavor Fusion",
+      "description": "Developed a quick commerce website for Flavor Fusion, a snack delivery service, offering both pickup and delivery options. Integrated an admin panel to manage product listings, orders, and customer details. Designed a userfriendly, responsive interface using HTML, CSS, and Bootstrap to enhance the shopping experience.",
+      "image": "fusion.png",
+      "techStack": "PHP, HTML, CSS, Bootstrap, MySQL",
+      "demoLink": "https://player.vimeo.com/video/1078326902?h=80fd163219&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+      "githubLink": "https://github.com/omk-rahi/flavor_fusion"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+body {
+  perspective: 1000px;
+  scroll-behavior: smooth;
+}
+
+.scene {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.face {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e0e7ff;
+  background: linear-gradient(#8b5cf6, #2922e7) padding-box,
+    linear-gradient(135deg, #fff, #fff, #fff) border-box;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.4), 0 0 35px rgba(99, 102, 241, 0.2);
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.front {
+  transform: translateZ(100px);
+}
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-gradient {
+  background: linear-gradient(45deg, #2563eb, #7c3aed);
+  color: #fff;
+}
+
+.border-gradient {
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white),
+    linear-gradient(45deg, #2563eb, #7c3aed);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
