@@ -27,10 +27,31 @@ import { gsap } from 'gsap';
 
 const menuBtn = document.getElementById('menu-btn');
 const menu = document.getElementById('menu');
+const navLinks = menu.querySelectorAll('a');
 let isOpen = false;
 
-
 menuBtn.addEventListener('click', () => {
+  toggleMenu();
+});
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (isOpen) {
+      gsap.to(menu, {
+        height: 0,
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.inOut",
+        onComplete: () => {
+          gsap.set(menu, { display: "none" });
+        }
+      });
+      isOpen = false;
+    }
+  });
+});
+
+function toggleMenu() {
   if (!isOpen) {
     gsap.set(menu, { display: "block" });
     gsap.fromTo(menu,
@@ -38,8 +59,16 @@ menuBtn.addEventListener('click', () => {
       { height: "auto", opacity: 1, duration: 0.4, ease: "power2.out" }
     );
   } else {
-    gsap.set(menu, { display: "none", opacity: 0, height: 0 });
+    gsap.to(menu, {
+      height: 0,
+      opacity: 0,
+      duration: 0.3,
+      ease: "power2.inOut",
+      onComplete: () => {
+        gsap.set(menu, { display: "none" });
+      }
+    });
   }
   isOpen = !isOpen;
-});
+}
 </script>
